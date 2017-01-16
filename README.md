@@ -1,1 +1,1 @@
-# WEBPROGRAMMING 2주차 1일
+# git : 버전관리시스템
