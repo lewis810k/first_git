@@ -1,18 +1,22 @@
 # git
 
-git은 버전관리시스템(VCS)이다.
+> git은 버전관리시스템(VCS)이다.
   
 -
 
 ### VCS란?
 
-파일의 변경이력을 기록하여 관리를 용이하게 해준다.
+> 파일의 변경이력을 기록하여 관리를 용이하게 해준다.
+
+-
 
 ### VCS의 이점
 
 - 변경 내용 공유 가능
 - 과거 상태로 복구 용이
-- 여러 분기(branch)를 통해 병렬 관리 가능
+- 여러 분기(*branch*)를 통해 병렬 관리 가능
+
+-
 
 ### git을 쓰는 이유?
 
@@ -27,6 +31,8 @@ git은 버전관리시스템(VCS)이다.
   -> *local* 혹은 *remote repository* 중 하나가 심각한 피해를 입더라도 분산된 코드로 전체 코드 복원 가능
 - 다양한 서비스 업체 및 보조 툴이 존재
 
+-
+
 ### 주요 용어
 
 - **Working Directory** : 실제 작업하고 있는 공간   
@@ -38,15 +44,36 @@ git은 버전관리시스템(VCS)이다.
 - **Remote Repository** – 외부 서버에 있는 저장 공간   
 : 인터넷을 이용하여 접근 가능하다. 여러 사용자로부터 관리되는 각 *local repository*의 접점
 
+-
+
 ### 주요 명령어
 
-- `Add` – 작업 내용 중 일부 혹은 전체를 stage area로 저장하는 작업
-- `commit` – stage area의 작업 내용을 local repository에 저장하는 작업   
-: 각각의 commit은 의미 있는 변경 단위이고, 변경에 대한 설명을 commit message로 남긴다. 
-- `push` – local repository의 내용을 remote repository로 보내는 작업 
-- `pull` – remote repository로부터 working directory로 변경 내용을 가져오는 것
-- `branch` – 새로운 commit을 쌓을 수 있는 가지를 만드는 것, 혹은 그 가지   
-: branch 중 개발의 주축이 되는 branch를 master Branch라 하며, 모든 branch는 master branch에서 분기되어 최종적으로 다시 master branch에 병합(merge)되어 개발이 진행된다.
-- `merge` – 하나의 branch를 다른 branch와 합치는 과정
-- gitignore - commit에 포함하지 않을 파일 관리
+- `Add` – 작업 내용 중 일부 혹은 전체를 *stage area*로 저장하는 작업
+- `commit` – *stage area*의 작업 내용을 *local repository*에 저장하는 작업   
+: 각각의 `commit`은 의미 있는 변경 단위이고, 변경에 대한 설명을 *commit message*로 남긴다. 
+- `push` – *local repository*의 내용을 *remote repository*로 보내는 작업 
+- `pull` – *remote repository*로부터 *working directory*로 변경 내용을 가져오는 것
+- `branch` – 새로운 `commit`을 쌓을 수 있는 가지를 만드는 것, 혹은 그 가지   
+: *branch* 중 개발의 주축이 되는 *branch*를 ***master Branch***라 하며, 모든 *branch*는 ***master branch***에서 분기되어 최종적으로 다시 ***master branch***에 병합(*merge*)되어 개발이 진행된다.
+- `merge` – 하나의 *branch*를 다른 *branch*와 합치는 과정   
 
+- gitignore - `commit`에 포함하지 않을 파일 관리
+
+-
+
+### git flow
+
+![git flow](https://camo.githubusercontent.com/6504c9df8922f9187037558bf1dad2dd57fd6c45/68747470733a2f2f696c6c75737472617465642d6769742e72656164746865646f63732e6f72672f656e2f6c61746573742f5f696d616765732f6769742d666c6f77732e737667)
+> *workspace* 내용을 *stage*에 `add`하여 *local repository*에 `commit`하고, 이를 `push`해서 *remote repository*로 보낸다.   
+
+<br>
+
+![git flow2](https://www.cs.swarthmore.edu/~newhall/unixhelp/git.jpg)
+> 공동작업자와 하나의 *remote repository*를 공유할 때 `add`와 `commit`은 각자의 *local* 영역에서 이루어지고 `push`와 `pull` 작업 시 공유하고 있는 *remote repository*에 접근하여 작업 내용을 동기화한다.  
+> 다른 작업자가 `push`를 했을 경우(`pull`할 내용이 생겼을 경우) 먼저 `pull`을 해서 동기화를 한 다음에 `push` 할 수 있다.
+
+-
+
+### git vs. github
+
+> `github`은 `git`이 아니다. `git`은 버전관리를 해주는 총괄적인 의미이고 `github`은 `git`에 사용될 `remote repository`를 제공해주는 `git`의 웹 기반 솔루션이다. 이 외에도 이슈 관리, 머지 요청 관리, 팀원 관리 등 전반적인 프로젝트 관리 기능도 함께 제공한다. 웹 기반으로 동작하기 때문에 인터넷 환경만 갖추어지면 접근이 가능하다. 기타 서비스로는 NAVER D2, GitLab, Bitbucket이 있다.
